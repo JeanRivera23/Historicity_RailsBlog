@@ -1,0 +1,19 @@
+<div class="flash-message">
+      <% if flash[:notice] %>
+        <%= flash[:notice] %>
+      <% end %>
+</div>
+
+<h1>Sign In</h1>
+
+<%= form_for(:session, url: session_path) do |f| %>
+
+    <%= f.label "First Name" %>
+    <%= f.text_field :fname %>
+
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+
+  <%= f.submit "sign in" %>
+
+<% end %>

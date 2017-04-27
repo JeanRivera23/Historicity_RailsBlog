@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Historicity</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <nav>
+      <ul>
+        <li><a href="/">home</a></li>
+        <li><a href="/users">feed</a></li>
+        <li><a href="/users/:id">profile</a></li>
+        <li><a href="/posts/new">publish</a></li>
+      </ul>
+    </nav>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

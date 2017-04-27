@@ -1,0 +1,12 @@
+<h1>Historians</h1>
+
+<ul>
+  <% @users.each do |u| %>
+    <li><a href="/users/:id"><%= u.fname %> <%= u.lname %></a></li>
+  <% end %>
+
+  <% @posts.each do |post| %>
+    <li><a href="/posts/:id"><%= post.title %> <%= post.content %></a></li>
+  <% end %>
+
+</ul>
