@@ -1,19 +1,14 @@
 <h1>Historians</h1>
 
 <ul>
-  <% @users.each do |u| %>
+  <% @posts.last(10).each do |post| %>
 
-    <% if @sesh ==  u.id %>
-        <li><%= u.fname.capitalize %> <%= u.lname.capitalize %></li>
+    <% if @sesh == post.user.id %>
+        <li><a href="/posts/<%=post.id %>"><%= post.title.capitalize %></a> <%= post.user.fname.capitalize %> <%= post.user.lname.capitalize %> <%= post.content %></li>
     <% else %>
-        <li><a href="users/view_user/<%=u.id%>"><%= u.fname.capitalize %> <%= u.lname.capitalize %></a></li>
+        <li><a href="/posts/view_user_post/<%=post.id %>"><%= post.title.capitalize %></a> <a href="users/view_user/<%=post.user.id%>"><%= post.user.fname.capitalize %> <%= post.user.lname.capitalize %></a> <%= post.content %></li>
     <% end %>
 
-  <% end %>
-
-
-  <% @posts.each do |post| %>
-    <li><a href="/posts/:id"><%= post.title.capitalize %> <%= post.content %></a></li>
   <% end %>
 
 </ul>

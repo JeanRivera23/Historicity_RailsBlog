@@ -59,7 +59,7 @@ class UsersController < ApplicationController
   end
 
 
-  # update user "profile" (put method)
+  # on submit the user "profile" is updated (put method)
   def update
     # if there is no session, means user isn't logged in so shouldn't have access to site
     if session[:user_id] == nil

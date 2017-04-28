@@ -3,19 +3,19 @@
 <p><span><%= @post.user.fname.capitalize %> <%= @post.user.lname.capitalize%></span> &mdash; <%= @post.content%></p>
 
 
-<%= form_tag("/posts/#{@post.id}/edit", :method => :get) do %>
-  <%= submit_tag "edit post" %>
-<% end %>
-
-<%= form_tag("/posts/#{@post.id}", :method => :delete) do %>
-  <%= submit_tag "delete post" %>
-<% end %>
-
-
 <h2>Comments</h2>
 <!-- show comments -->
 <% @comments.each do |c| %>
     <h3><%= c.content %></h3>
 <% end %>
 
-<!-- delete comments -->
+
+<!-- add comment form -->
+<%= form_for(@comment, url: "/posts/view_user_post/#{@post.id}", :method => :post) do |f| %>
+
+  <%= f.label "Comment" %>
+  <%= f.text_field :content %>
+
+  <%= f.submit "add"%>
+
+<% end %>

@@ -9,6 +9,10 @@ Rails.application.routes.draw do
 
   get '/users/view_user/:id' => "users#view_user"
 
+  get '/posts/view_user_post/:id' => "posts#view_user_post"
+
+  post '/posts/view_user_post/:id' => "posts#add_comment"
+
   resources :users
 
   resources :posts do
