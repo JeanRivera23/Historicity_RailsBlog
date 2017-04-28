@@ -2,11 +2,10 @@
 
 <h3>The largest community of historians devoted to exploring the historicity of any and all topics.</h3>
 
+<%= form_tag('/session/new', :method => :get) do %>
+  <%= submit_tag "sign in" %>
+<% end %>
 
-<form action="/session/new">
-  <input type="submit" value="sign in">
-</form>
-
-<form action="/users/new">
-  <input type="submit" value="sign up">
-</form>
+<%= form_tag('/users/new', :method => :get) do %>
+  <%= submit_tag "sign up" %>
+<% end %>

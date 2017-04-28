@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   post '/session' => "session#create"
   delete '/session/:id' => "session#destroy"
 
-  resources :users
   get '/users/view_user/:id' => "users#view_user"
+
+  resources :users
 
   resources :posts do
     resources :comments

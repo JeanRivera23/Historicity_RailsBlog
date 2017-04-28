@@ -8,6 +8,7 @@ class UsersController < ApplicationController
       # giving users index page access to all users & posts so  displaying users and posts is possible
       @users = User.all
       @posts = Post.all
+      @sesh = session[:user_id]
     end
   end
 
@@ -16,6 +17,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
+
 
   #sign up form submit creates new user (post method)
   def create
@@ -76,7 +78,7 @@ class UsersController < ApplicationController
   end
 
 
-  #to view other user's profiles
+  #to view other users' profiles
   def view_user
     @user = User.find(params[:id])
   end

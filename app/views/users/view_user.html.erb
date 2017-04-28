@@ -1,0 +1,33 @@
+<h1><%= @user.fname.capitalize %> <%= @user.lname.capitalize %></h1>
+
+
+<div class="postHistory">
+
+  <h1>Post History</h1>
+
+  <% @user.posts.each do |post| %>
+
+    <div class="postDisplay">
+
+        <p id="pFeed"> <%= post.title.capitalize %> : <%= post.content %></p>
+
+    </div>
+
+  <% end %>
+  </div>
+
+
+  <div class="commentHistory">
+
+    <h1>Comment History</h1>
+
+    <% @user.comments.each do |post| %>
+
+      <div class="commentDisplay">
+
+        <p id="pFeed"> <%= comment.content %> </p>
+
+  </div>
+
+    <% end %>
+</div>

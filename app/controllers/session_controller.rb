@@ -5,7 +5,7 @@ class SessionController < ApplicationController
   end
 
 
-  #user signed in on submit (post method)
+  #user is signed in on submit (post method)
   def create
     @user = User.find_by(fname: params[:session][:fname])
 

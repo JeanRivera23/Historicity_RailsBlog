@@ -1,12 +1,10 @@
 <h1><%= @user.fname.capitalize %> <%= @user.lname.capitalize %></h1>
 
-<form action="/users/:id/edit">
-  <input type="submit" value="edit account info">
-</form>
 
-<!-- <form action="/users/:id" method=>
-  <input type="submit" value="delete account">
-</form> -->
+<%= form_tag('/users/:id/edit', :method => :get) do %>
+  <%= submit_tag "edit account info" %>
+<% end %>
+
 
 <%= form_tag('/users/:id', :method => :delete) do %>
   <%= submit_tag "delete account" %>
