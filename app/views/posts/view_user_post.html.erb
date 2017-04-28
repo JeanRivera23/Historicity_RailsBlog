@@ -6,7 +6,7 @@
 <h2>Comments</h2>
 <!-- show comments -->
 <% @comments.each do |c| %>
-    <h3><%= c.content %></h3>
+    <h3><%= c.content %>&mdash;<%= c.user.fname.capitalize%> <%= c.user.lname.capitalize%></h3>
 <% end %>
 
 

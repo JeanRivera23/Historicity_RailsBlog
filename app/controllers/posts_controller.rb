@@ -85,14 +85,16 @@ class PostsController < ApplicationController
 
       @comment = Comment.new(
         content: params[:comment][:content],
-        post_id: @post,
+        post_id: @post.id,
         user_id: @sesh
       )
+
       end
 
-      @comment.save
+      if @comment.save
+        redirect_to "/posts/view_user_post/#{@post.id}"
+      end
 
-      redirect_to "/posts/view_user_post/#{@comment.post_id}"
     end
 
 
