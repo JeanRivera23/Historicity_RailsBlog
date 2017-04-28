@@ -1,20 +1,23 @@
 class UsersController < ApplicationController
 
   def index
+    # if there is no session, means user isn't logged in so shouldn't have access to site
     if session[:user_id] == nil
       redirect_to "/"
     else
+      # giving users index page access to all users & posts so  displaying users and posts is possible
       @users = User.all
       @posts = Post.all
     end
   end
 
-  # sign up form
+
+  # sign up form (get method)
   def new
     @user = User.new
   end
 
-  #sign up form submit creates new user
+  #sign up form submit creates new user (post method)
   def create
     @user = User.new(
       fname: params[:user][:fname],
@@ -30,7 +33,22 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
+
+  # this is the "profile page" it displays the current user
   def show
+    # if there is no session, means user isn't logged in so shouldn't have access to site
+    if session[:user_id] == nil
+      redirect_to "/"
+    else
+      # storing current user (by session) in instance variable so current user data can be accessed and displayed
+      @user = User.find(session[:user_id])
+    end
+  end
+
+
+  # edit user "profile" form (get method)
+  def edit
+    # if there is no session, means user isn't logged in so shouldn't have access to site
     if session[:user_id] == nil
       redirect_to "/"
     else
@@ -38,15 +56,10 @@ class UsersController < ApplicationController
     end
   end
 
-  # edit profile form (get method)
-  def edit
-    if session[:user_id] == nil
-      redirect_to "/"
-    end
-  end
 
-  # update user profile (post method)
+  # update user "profile" (put method)
   def update
+    # if there is no session, means user isn't logged in so shouldn't have access to site
     if session[:user_id] == nil
       redirect_to "/"
     else
@@ -57,9 +70,21 @@ class UsersController < ApplicationController
         lname: params[:user][:lname],
         password: params[:user][:password]
       )
-      # redirect_to users_id_path
+
+      redirect_to "/users/:id"
     end
   end
+
+
+  #to view other user's profiles
+  def view_user
+    @user = User.find(params[:id])
+  end
+
+
+  #to sign out
+  # def sign_out
+  # end
 
 
   # to delete a user account (delete method)

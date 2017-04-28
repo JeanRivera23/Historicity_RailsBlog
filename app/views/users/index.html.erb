@@ -2,11 +2,11 @@
 
 <ul>
   <% @users.each do |u| %>
-    <li><a href="/users/:id"><%= u.fname %> <%= u.lname %></a></li>
+    <li><a href="/users/:id"><%= u.fname.capitalize %> <%= u.lname.capitalize %></a></li>
   <% end %>
 
   <% @posts.each do |post| %>
-    <li><a href="/posts/:id"><%= post.title %> <%= post.content %></a></li>
+    <li><a href="/posts/:id"><%= post.title.capitalize %> <%= post.content %></a></li>
   <% end %>
 
 </ul>

@@ -1,2 +1,32 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h1>Edit Profile</h1>
+
+<%= form_for(@user) do |f| %>
+
+  <%= f.label "First Name" %>
+  <%= f.text_field :fname %>
+
+  <%= f.label "Last Name" %>
+  <%= f.text_field :lname %>
+
+  <%= f.label :password %>
+  <%= f.text_field :password %>
+
+  <%= f.submit %>
+
+<% end %>
+
+
+<!-- <form id ="editForm" action= "users#update" method="put">
+
+  <label>First Name</label>
+  <input type="text" name="[user]fname">
+
+  <label>Last Name</label>
+  <input type="text" name="[user]lname">
+
+  <label>Password</label>
+  <input type="password" name="[user]password">
+
+  <input class="btn" type="submit" value="edit">
+
+</form> -->

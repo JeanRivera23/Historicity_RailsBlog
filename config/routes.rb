@@ -8,8 +8,7 @@ Rails.application.routes.draw do
   delete '/session/:id' => "session#destroy"
 
   resources :users
-  get '/users/sign_in_form' => "users#sign_in_form"
-  post '/users' => "users#sign_in"
+  get '/users/view_user/:id' => "users#view_user"
 
   resources :posts do
     resources :comments
