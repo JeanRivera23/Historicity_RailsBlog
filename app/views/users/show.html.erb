@@ -4,9 +4,14 @@
   <input type="submit" value="edit account info">
 </form>
 
-<form action="/users/:id" method=>
+<!-- <form action="/users/:id" method=>
   <input type="submit" value="delete account">
-</form>
+</form> -->
+
+<%= form_tag('/users/:id', :method => :delete) do %>
+  <%= submit_tag "delete account" %>
+<% end %>
+
 
 <div class="postHistory">
 
@@ -34,7 +39,7 @@
 
         <p id="pFeed"> <%= comment.content %> </p>
 
-      </div>
+  </div>
 
     <% end %>
 </div>
