@@ -12,3 +12,11 @@
   <% end %>
 
 </ul>
+
+
+<h1>Comments</h1>
+
+<% @comments.last(20).each do |comment| %>
+
+    <p id="pFeed"> <a href="/posts/view_user_post/<%= comment.post_id %>">&#64;<%= comment.post.title %></a> <%= comment.content %> </p>
+<% end %>

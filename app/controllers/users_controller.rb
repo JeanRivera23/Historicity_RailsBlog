@@ -8,6 +8,7 @@ class UsersController < ApplicationController
       # giving users index page access to all users & posts so  displaying users and posts is possible
       @users = User.all
       @posts = Post.all
+      @comments = Comment.all
       @sesh = session[:user_id]
     end
   end
@@ -80,13 +81,9 @@ class UsersController < ApplicationController
 
   #to view other users' profiles
   def view_user
+    @posts = Post.all
     @user = User.find(params[:id])
   end
-
-
-  #to sign out
-  # def sign_out
-  # end
 
 
   # to delete a user account (delete method)

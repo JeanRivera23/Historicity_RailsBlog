@@ -8,6 +8,14 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <!-- sign out button -->
+  <% if session[:user_id]%>
+      <%= form_tag("/session/#{:user_id}", :method => :delete) do %>
+        <%= submit_tag "sign out" %>
+      <% end %>
+  <% end %>
+
+
   <nav>
       <ul>
         <li><a href="/">home</a></li>

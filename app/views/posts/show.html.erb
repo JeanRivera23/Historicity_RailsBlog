@@ -14,8 +14,9 @@
 
 <h2>Comments</h2>
 <!-- show comments -->
-<% @comments.each do |c| %>
+<% @post.comments.each do |c| %>
     <h3><%= c.content %></h3>
 <% end %>
+
 
 <!-- delete comments -->

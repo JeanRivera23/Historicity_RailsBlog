@@ -21,7 +21,7 @@ class PostsController < ApplicationController
 
     @post.save
 
-    redirect_to "/posts/:id"
+    redirect_to "/posts/#{@post.id}"
   end
 
 
@@ -70,6 +70,7 @@ class PostsController < ApplicationController
   def view_user_post
     @post = Post.find(params[:id])
     @comments = Comment.all
+    @users = User.all
     @comment = Comment.new
   end
 
@@ -105,6 +106,7 @@ class PostsController < ApplicationController
       redirect_to "/"
     else
       @post = Post.find(params[:id])
+      @post.comments.destroy
       @post.destroy
 
       redirect_to "/users/:id"

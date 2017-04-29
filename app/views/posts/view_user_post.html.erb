@@ -5,8 +5,12 @@
 
 <h2>Comments</h2>
 <!-- show comments -->
-<% @comments.each do |c| %>
-    <h3><%= c.content %>&mdash;<%= c.user.fname.capitalize%> <%= c.user.lname.capitalize%></h3>
+<% @post.comments.each do |comment| %>
+    <h3>
+      <%= comment.content %>&mdash;
+      <%= comment.user.fname.capitalize%>
+      <%= comment.user.lname.capitalize%>
+    </h3>
 <% end %>
 
 

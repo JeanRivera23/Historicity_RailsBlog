@@ -9,7 +9,9 @@
 
     <div class="postDisplay">
 
-        <p id="pFeed"> <%= post.title.capitalize %> : <%= post.content %></p>
+        <a href="/posts/view_user_post/<%= post.id %>">
+          <%= post.title.capitalize %>
+        </a>: <%= post.content %>
 
     </div>
 
@@ -21,11 +23,11 @@
 
     <h1>Comment History</h1>
 
-    <% @user.comments.each do |post| %>
+    <% @user.comments.each do |comment| %>
 
       <div class="commentDisplay">
 
-        <p id="pFeed"> <%= comment.content %> </p>
+        <p id="pFeed"> <a href="/posts/view_user_post/<%= comment.post_id %>">&#64;<%= comment.post.title %></a> <%= comment.content %> </p>
 
   </div>
 
