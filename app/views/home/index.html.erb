@@ -1,13 +1,17 @@
-<h1>Historicity</h1>
+<div class="homeMainContainer">
+    <h1 class="mainH1">Historicity</h1>
 
-<h3>The largest community of historians devoted to exploring the historicity of any and all topics.</h3>
+    <%= image_tag("/assets/sphinx-256.png") %>
 
-<% if session[:user_id] == nil %>
-    <%= form_tag('/session/new', :method => :get) do %>
-      <%= submit_tag "sign in" %>
+    <p id="homeMainP">The largest community of historians devoted to exploring the historicity of any and all topics.</p>
+
+    <% if session[:user_id] == nil %>
+        <%= form_tag('/session/new', :method => :get) do %>
+          <%= submit_tag "sign in", class: "btn" %>
+        <% end %>
+
+        <%= form_tag('/users/new', :method => :get) do %>
+          <%= submit_tag "sign up", class: "btn" %>
+        <% end %>
     <% end %>
-
-    <%= form_tag('/users/new', :method => :get) do %>
-      <%= submit_tag "sign up" %>
-    <% end %>
-<% end %>
+</div>

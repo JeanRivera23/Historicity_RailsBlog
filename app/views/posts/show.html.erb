@@ -4,11 +4,11 @@
 
 
 <%= form_tag("/posts/#{@post.id}/edit", :method => :get) do %>
-  <%= submit_tag "edit post" %>
+  <%= submit_tag "edit post", class: "btn"%>
 <% end %>
 
 <%= form_tag("/posts/#{@post.id}", :method => :delete) do %>
-  <%= submit_tag "delete post" %>
+  <%= submit_tag "delete post", class: "btn" %>
 <% end %>
 
 
@@ -16,8 +16,8 @@
 <!-- show comments -->
 <% @post.comments.each do |c| %>
     <h3><%= c.content %>&mdash;<%= c.user.fname %> <%= c.user.lname %></h3>
-    <!-- delete comments, deletes but doesn't route correctly-->
+    <!-- delete comments-->
     <%= form_tag("/posts/#{@post.id}/comments/#{c.id}", :method => :delete) do %>
-      <%= submit_tag "delete comment" %>
+      <%= submit_tag "delete comment", class: "btn" %>
     <% end %>
 <% end %>

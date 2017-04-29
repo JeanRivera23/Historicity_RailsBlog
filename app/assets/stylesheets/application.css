@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+   font-family: 'Open Sans', sans-serif;
+   color: #363636;
+ }
+
+h1, h2, h3 {
+  font-family: 'Bungee Inline', cursive;
+}
+
+.btn {
+  margin: 10px;
+  background-color: #363636;
+  color: white;
+  width: 90px;
+  height: 33px;
+  border-radius: 10px;
+  border: 1px solid #363636;
+}

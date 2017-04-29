@@ -2,12 +2,12 @@
 
 
 <%= form_tag('/users/:id/edit', :method => :get) do %>
-  <%= submit_tag "edit account info" %>
+  <%= submit_tag "edit account", class: "btn" %>
 <% end %>
 
 
 <%= form_tag('/users/:id', :method => :delete) do %>
-  <%= submit_tag "delete account" %>
+  <%= submit_tag "delete account", class: "btn" %>
 <% end %>
 
 

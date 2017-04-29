@@ -1,3 +1,18 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.homeMainContainer {
+  background-image: url("/assets/body-gradient.gif");
+  background-repeat: repeat-x;
+  height: 600px;
+}
+
+.mainH1 {
+  font-size: 60px;
+}
+
+#homeMainP {
+  font-weight: bold;
+  font-size: 24px;
+}
