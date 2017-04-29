@@ -15,8 +15,9 @@
 <h2>Comments</h2>
 <!-- show comments -->
 <% @post.comments.each do |c| %>
-    <h3><%= c.content %></h3>
+    <h3><%= c.content %>&mdash;<%= c.user.fname %> <%= c.user.lname %></h3>
+    <!-- delete comments, deletes but doesn't route correctly-->
+    <%= form_tag("/posts/#{@post.id}/comments/#{c.id}", :method => :delete) do %>
+      <%= submit_tag "delete comment" %>
+    <% end %>
 <% end %>
-
-
-<!-- delete comments -->

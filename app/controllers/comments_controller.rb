@@ -6,9 +6,10 @@ class CommentsController < ApplicationController
       redirect_to "/"
     else
       @comment = Comment.find(params[:id])
+      @post = @comment.post_id
       @comment.destroy
 
-      redirect_to "/posts/:id"
+      redirect_to "/posts/#{@post}"
     end
   end
 end
