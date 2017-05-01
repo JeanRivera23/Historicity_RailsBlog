@@ -8,9 +8,9 @@
         <% @posts.last(10).each do |post| %>
 
           <% if @sesh == post.user.id %>
-              <li><a href="/posts/<%=post.id %>"><%= post.title.capitalize %></a> <%= post.user.fname.capitalize %> <%= post.user.lname.capitalize %> <%= post.content %></li>
+              <li><a href="/posts/<%=post.id %>"><%= post.title.capitalize %></a> <%= post.user.fname.capitalize %> <%= post.user.lname.capitalize %> <br> <%= post.content %></li> <br>
           <% else %>
-              <li><a href="/posts/view_user_post/<%=post.id %>"><%= post.title.capitalize %></a> <a href="users/view_user/<%=post.user.id%>"><%= post.user.fname.capitalize %> <%= post.user.lname.capitalize %></a> <%= post.content %></li>
+              <li><a href="/posts/view_user_post/<%=post.id %>"><%= post.title.capitalize %></a> <a href="users/view_user/<%=post.user.id%>"><span id="uInSpan"><%= post.user.fname.capitalize %> <%= post.user.lname.capitalize %></span></a> <br><%= post.content %></li><br>
           <% end %>
         <% end %>
       </ul>
