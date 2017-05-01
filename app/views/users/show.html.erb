@@ -1,43 +1,46 @@
-<h1><%= @user.fname.capitalize %> <%= @user.lname.capitalize %></h1>
+<div class="MainContainer">
+  <h1><%= @user.fname.capitalize %> <%= @user.lname.capitalize %></h1>
 
 
-<%= form_tag('/users/:id/edit', :method => :get) do %>
-  <%= submit_tag "edit account", class: "btn" %>
-<% end %>
+  <%= form_tag('/users/:id/edit', :method => :get) do %>
+    <%= submit_tag "edit account", class: "btn" %>
+  <% end %>
 
 
-<%= form_tag('/users/:id', :method => :delete) do %>
-  <%= submit_tag "delete account", class: "btn" %>
-<% end %>
+  <%= form_tag('/users/:id', :method => :delete) do %>
+    <%= submit_tag "delete account", class: "btn" %>
+  <% end %>
 
 
-<div class="postHistory">
+  <div class="postHistory">
 
-  <h1>Published Work</h1>
+    <h1>Published Work</h1>
 
-  <% @user.posts.each do |post| %>
+    <% @user.posts.each do |post| %>
 
-    <div class="postDisplay">
+      <div class="postDisplay">
 
-        <p id="pFeed"> <a href="/posts/<%=post.id %>"><%= post.title.capitalize %></a> : <%= post.content %></p>
+          <p id="pFeed"> <a href="/posts/<%=post.id %>"><%= post.title.capitalize %></a> : <%= post.content %></p>
+
+      </div>
+
+    <% end %>
+    </div>
+
+
+    <div class="commentHistory">
+
+      <h1>Comment History</h1>
+
+      <% @user.comments.each do |comment| %>
+
+        <div class="commentDisplay">
+
+          <p id="pFeed"> <%= comment.content %> </p>
 
     </div>
 
-  <% end %>
+      <% end %>
   </div>
 
-
-  <div class="commentHistory">
-
-    <h1>Comment History</h1>
-
-    <% @user.comments.each do |comment| %>
-
-      <div class="commentDisplay">
-
-        <p id="pFeed"> <%= comment.content %> </p>
-
-  </div>
-
-    <% end %>
 </div>

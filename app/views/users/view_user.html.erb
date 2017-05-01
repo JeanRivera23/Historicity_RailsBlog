@@ -1,35 +1,38 @@
-<h1><%= @user.fname.capitalize %> <%= @user.lname.capitalize %></h1>
+<div class="MainContainer">
+  <h1><%= @user.fname.capitalize %> <%= @user.lname.capitalize %></h1>
 
 
-<div class="postHistory">
+  <div class="postHistory">
 
-  <h1>Post History</h1>
+    <h1>Post History</h1>
 
-  <% @user.posts.each do |post| %>
+    <% @user.posts.each do |post| %>
 
-    <div class="postDisplay">
+      <div class="postDisplay">
 
-        <a href="/posts/view_user_post/<%= post.id %>">
-          <%= post.title.capitalize %>
-        </a>: <%= post.content %>
+          <a href="/posts/view_user_post/<%= post.id %>">
+            <%= post.title.capitalize %>
+          </a>: <%= post.content %>
+
+      </div>
+
+    <% end %>
+    </div>
+
+
+    <div class="commentHistory">
+
+      <h1>Comment History</h1>
+
+      <% @user.comments.each do |comment| %>
+
+        <div class="commentDisplay">
+
+          <p id="pFeed"> <a href="/posts/view_user_post/<%= comment.post_id %>">&#64;<%= comment.post.title %></a> <%= comment.content %> </p>
 
     </div>
 
-  <% end %>
+      <% end %>
   </div>
 
-
-  <div class="commentHistory">
-
-    <h1>Comment History</h1>
-
-    <% @user.comments.each do |comment| %>
-
-      <div class="commentDisplay">
-
-        <p id="pFeed"> <a href="/posts/view_user_post/<%= comment.post_id %>">&#64;<%= comment.post.title %></a> <%= comment.content %> </p>
-
-  </div>
-
-    <% end %>
 </div>

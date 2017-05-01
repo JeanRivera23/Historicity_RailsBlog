@@ -1,25 +1,28 @@
-<h1><%= @post.title.capitalize %></h1>
+<div class="MainContainer">
+  <h1><%= @post.title.capitalize %></h1>
 
-<p><span><%= @post.user.fname.capitalize %> <%= @post.user.lname.capitalize%></span> &mdash; <%= @post.content%></p>
-
-
-<h2>Comments</h2>
-<!-- show comments -->
-<% @post.comments.each do |comment| %>
-    <h3>
-      <%= comment.content %>&mdash;
-      <%= comment.user.fname.capitalize%>
-      <%= comment.user.lname.capitalize%>
-    </h3>
-<% end %>
+  <p><span><%= @post.user.fname.capitalize %> <%= @post.user.lname.capitalize%></span> &mdash; <%= @post.content%></p>
 
 
-<!-- add comment form -->
-<%= form_for(@comment, url: "/posts/view_user_post/#{@post.id}", :method => :post) do |f| %>
+  <h2>Comments</h2>
+  <!-- show comments -->
+  <% @post.comments.each do |comment| %>
+      <h3>
+        <%= comment.content %>&mdash;
+        <%= comment.user.fname.capitalize%>
+        <%= comment.user.lname.capitalize%>
+      </h3>
+  <% end %>
 
-  <%= f.label "Comment" %>
-  <%= f.text_field :content %>
 
-  <%= f.submit "add", class: "btn" %>
+  <!-- add comment form -->
+  <%= form_for(@comment, url: "/posts/view_user_post/#{@post.id}", :method => :post) do |f| %>
 
-<% end %>
+    <%= f.label "Comment" %>
+    <%= f.text_field :content %>
+
+    <%= f.submit "add", class: "btn" %>
+
+  <% end %>
+
+</div>

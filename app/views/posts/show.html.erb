@@ -1,23 +1,26 @@
-<h1><%= @post.title.capitalize %></h1>
+<div class="MainContainer">
+  <h1><%= @post.title.capitalize %></h1>
 
-<p><span><%= @post.user.fname.capitalize %> <%= @post.user.lname.capitalize%></span> &mdash; <%= @post.content%></p>
-
-
-<%= form_tag("/posts/#{@post.id}/edit", :method => :get) do %>
-  <%= submit_tag "edit post", class: "btn"%>
-<% end %>
-
-<%= form_tag("/posts/#{@post.id}", :method => :delete) do %>
-  <%= submit_tag "delete post", class: "btn" %>
-<% end %>
+  <p><span><%= @post.user.fname.capitalize %> <%= @post.user.lname.capitalize%></span> &mdash; <%= @post.content%></p>
 
 
-<h2>Comments</h2>
-<!-- show comments -->
-<% @post.comments.each do |c| %>
-    <h3><%= c.content %>&mdash;<%= c.user.fname %> <%= c.user.lname %></h3>
-    <!-- delete comments-->
-    <%= form_tag("/posts/#{@post.id}/comments/#{c.id}", :method => :delete) do %>
-      <%= submit_tag "delete comment", class: "btn" %>
-    <% end %>
-<% end %>
+  <%= form_tag("/posts/#{@post.id}/edit", :method => :get) do %>
+    <%= submit_tag "edit post", class: "btn"%>
+  <% end %>
+
+  <%= form_tag("/posts/#{@post.id}", :method => :delete) do %>
+    <%= submit_tag "delete post", class: "btn" %>
+  <% end %>
+
+
+  <h2>Comments</h2>
+  <!-- show comments -->
+  <% @post.comments.each do |c| %>
+      <h3><%= c.content %>&mdash;<%= c.user.fname %> <%= c.user.lname %></h3>
+      <!-- delete comments-->
+      <%= form_tag("/posts/#{@post.id}/comments/#{c.id}", :method => :delete) do %>
+        <%= submit_tag "delete comment", class: "btn" %>
+      <% end %>
+  <% end %>
+
+</div>

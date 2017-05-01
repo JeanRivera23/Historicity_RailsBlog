@@ -12,20 +12,20 @@
 
   </head>
 
-  <!-- sign out button -->
   <% if session[:user_id]%>
-      <%= form_tag("/session/#{:user_id}", :method => :delete) do %>
-        <%= submit_tag "sign out", class: "btn"%>
-      <% end %>
-  <% end %>
+      <nav id="mNav">
+          <%= image_tag("/assets/management-library-icon_RD.png", class: "navLogo") %>
+          <ul id="mUl">
+            <li id="mLi"><a id="mA" href="/">home</a></li>
+            <li id="mLi"><a id="mA" href="/users">feed</a></li>
+            <li id="mLi"><a id="mA" href="/users/:id">profile</a></li>
+            <li id="mLi"><a id="mA" href="/posts/new">publish</a></li>
 
-  <% if session[:user_id]%>
-      <nav>
-          <ul>
-            <li><a href="/">home</a></li>
-            <li><a href="/users">feed</a></li>
-            <li><a href="/users/:id">profile</a></li>
-            <li><a href="/posts/new">publish</a></li>
+            <!-- sign out button -->
+            <%= form_tag("/session/#{:user_id}", :method => :delete) do %>
+              <%= submit_tag "sign out", class: "btn", id: "signOut"%>
+            <% end %>
+
           </ul>
         </nav>
     <% end %>

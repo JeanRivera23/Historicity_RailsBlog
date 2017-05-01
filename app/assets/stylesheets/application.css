@@ -30,8 +30,56 @@
    left: 0px;
    width: 600px;
    height: 370px;
-   /*border: 1px solid black;*/
+ }
 
+ #mA {
+   text-decoration: none;
+   color: black;
+ }
+
+ #mA:hover {
+   color: #808080;
+ }
+
+ #mNav {
+   position: fixed;
+   top: 0px;
+   left: 0px;
+   width: 100%;
+   height: 60px;
+   border-bottom: 15px solid #353839;
+   background-color: white;
+   padding: 10px;
+   margin-bottom: 30px;
+ }
+
+ .navLogo {
+   position: relative;
+   height: 50px;
+   width: 50px;
+   top: 3px;
+   left: 10px;
+ }
+
+ #mUl {
+   list-style-type: none;
+   position: absolute;
+   top: 13px;
+   left: 60px;
+ }
+
+ #mLi {
+   display: inline;
+   font-size: 18px;
+   font-weight: bold;
+   width: 180px;
+   padding-right: 60px;
+ }
+
+ #signOut {
+   position: absolute;
+   top: 75px;
+   left: -55px;
  }
 
 h1, h2, h3 {
@@ -52,4 +100,43 @@ h1, h2, h3 {
   border-radius: 10px;
   border: 1px solid #363636;
   font-size: 15px;
+}
+
+.btn:hover {
+  background-color: #808080;
+}
+
+.form {
+  top: 10px;
+  position: relative;
+  left: 70px;
+}
+
+.formLabel {
+  margin-right: 10px;
+}
+
+#signInBtn {
+  position: relative;
+  top: 0px;
+  left: 40px;
+}
+
+#signUpBtn {
+  position: relative;
+  top: 15px;
+  left: 40px;
+}
+
+.flash-message {
+  width: 100%;
+  position: absolute;
+  padding: 10px;
+  top: 0px;
+  left: 0px;
+  height: 30px;
+  background-color: red;
+  color: white;
+  font-weight: bolder;
+  font-size: 18px;
 }

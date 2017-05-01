@@ -1,19 +1,26 @@
-<div class="flash-message">
+
       <% if flash[:notice] %>
-        <%= flash[:notice] %>
+        <div class="flash-message">
+          <%= flash[:notice] %>
+        </div>
       <% end %>
+
+
+<div class="signInContainer">
+
+  <h1 id="sI">Sign In</h1>
+  <div class="form">
+    <%= form_for(:session, url: session_path) do |f| %>
+
+        <%= f.label "First Name", class: "formLabel" %>
+        <%= f.text_field :fname %> <br> <br>
+
+        <%= f.label :password, class: "formLabel" %>
+        <%= f.text_field :password %> <br> <br>
+
+      <%= f.submit "sign in", class: "btn", id: "signInBtn" %>
+
+    <% end %>
+  </div>
+
 </div>
-
-<h1>Sign In</h1>
-
-<%= form_for(:session, url: session_path) do |f| %>
-
-    <%= f.label "First Name" %>
-    <%= f.text_field :fname %>
-
-    <%= f.label :password %>
-    <%= f.text_field :password %>
-
-  <%= f.submit "sign in", class: "btn" %>
-
-<% end %>

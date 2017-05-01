@@ -1,22 +1,27 @@
-<h1>Historians</h1>
+<div class="MainContainer">
+  <h1>Historians</h1>
 
-<ul>
-  <% @posts.last(10).each do |post| %>
+  <ul>
+    <% @posts.last(10).each do |post| %>
 
-    <% if @sesh == post.user.id %>
-        <li><a href="/posts/<%=post.id %>"><%= post.title.capitalize %></a> <%= post.user.fname.capitalize %> <%= post.user.lname.capitalize %> <%= post.content %></li>
-    <% else %>
-        <li><a href="/posts/view_user_post/<%=post.id %>"><%= post.title.capitalize %></a> <a href="users/view_user/<%=post.user.id%>"><%= post.user.fname.capitalize %> <%= post.user.lname.capitalize %></a> <%= post.content %></li>
+      <% if @sesh == post.user.id %>
+          <li><a href="/posts/<%=post.id %>"><%= post.title.capitalize %></a> <%= post.user.fname.capitalize %> <%= post.user.lname.capitalize %> <%= post.content %></li>
+      <% else %>
+          <li><a href="/posts/view_user_post/<%=post.id %>"><%= post.title.capitalize %></a> <a href="users/view_user/<%=post.user.id%>"><%= post.user.fname.capitalize %> <%= post.user.lname.capitalize %></a> <%= post.content %></li>
+      <% end %>
+
     <% end %>
 
+  </ul>
+
+  <hr>
+
+
+  <h2>Comments</h2>
+
+  <% @comments.last(20).each do |comment| %>
+
+      <p id="pFeed"> <a href="/posts/view_user_post/<%= comment.post_id %>">&#64;<%= comment.post.title %></a> <%= comment.content %> </p>
   <% end %>
 
-</ul>
-
-
-<h1>Comments</h1>
-
-<% @comments.last(20).each do |comment| %>
-
-    <p id="pFeed"> <a href="/posts/view_user_post/<%= comment.post_id %>">&#64;<%= comment.post.title %></a> <%= comment.content %> </p>
-<% end %>
+</div>

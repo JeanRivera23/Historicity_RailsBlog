@@ -1,13 +1,18 @@
-<h1>Publish a New Post</h1>
+<div class="signInContainer">
 
-<%= form_for @post do |f| %>
+    <h1 id="sI">Publish a Post</h1>
 
-  <%= f.label "Title" %>
-  <%= f.text_field :title %>
+    <div class="form">
+        <%= form_for @post do |f| %>
 
-  <%= f.label "Content" %>
-  <%= f.text_field :content %>
+          <%= f.label "Title", class: "formLabel" %>
+          <%= f.text_field :title %><br> <br>
 
-  <%= f.submit "publish", class: "btn" %>
+          <%= f.label "Content", class: "formLabel" %>
+          <%= f.text_field :content %><br> <br>
 
-<% end %>
+          <%= f.submit "publish", class: "btn", id: "signInBtn" %>
+
+        <% end %>
+    </div>
+</div>
