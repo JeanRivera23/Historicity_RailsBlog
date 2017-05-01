@@ -1,17 +1,20 @@
-<div class="homeMainContainer">
-    <h1 class="mainH1">Historicity</h1>
+<div class="MainContainer">
+    <%= image_tag("/assets/management-library-icon_RD.png", class: "logo") %>
 
-    <%= image_tag("/assets/sphinx-256.png") %>
+    <h1 class="mainH1" id="homeH1">Historicity</h1>
 
-    <p id="homeMainP">The largest community of historians devoted to exploring the historicity of any and all topics.</p>
+    <p id="homeMainP">The largest community of historians devoted to <br> exploring the historicity of any and all topics.</p>
 
-    <% if session[:user_id] == nil %>
-        <%= form_tag('/session/new', :method => :get) do %>
-          <%= submit_tag "sign in", class: "btn" %>
-        <% end %>
+    <div class="signInUp">
+      <% if session[:user_id] == nil %>
+          <%= form_tag('/session/new', :method => :get) do %>
+            <%= submit_tag "sign in", id: "btn1", class: "btn" %>
+          <% end %>
 
-        <%= form_tag('/users/new', :method => :get) do %>
-          <%= submit_tag "sign up", class: "btn" %>
-        <% end %>
-    <% end %>
+          <%= form_tag('/users/new', :method => :get) do %>
+            <%= submit_tag "sign up", id: "btn2", class: "btn" %>
+          <% end %>
+      <% end %>
+    </div>
+
 </div>

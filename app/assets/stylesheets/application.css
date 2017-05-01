@@ -16,19 +16,40 @@
 
  body {
    font-family: 'Open Sans', sans-serif;
-   color: #363636;
+   /*background-image: linear-gradient(#dd975e, #f8e1d1);*/
+   height: 100%;
+   padding: 2%;
+ }
+
+ .MainContainer {
+   position: absolute;
+   margin: auto;
+   top: 0px;
+   right: 0px;
+   bottom: 0px;
+   left: 0px;
+   width: 600px;
+   height: 370px;
+   /*border: 1px solid black;*/
+
  }
 
 h1, h2, h3 {
   font-family: 'Bungee Inline', cursive;
 }
 
+.signInUp {
+  position: relative;
+  left: 25%;
+}
+
 .btn {
   margin: 10px;
   background-color: #363636;
   color: white;
-  width: 90px;
-  height: 33px;
+  width: 120px;
+  height: 44px;
   border-radius: 10px;
   border: 1px solid #363636;
+  font-size: 15px;
 }

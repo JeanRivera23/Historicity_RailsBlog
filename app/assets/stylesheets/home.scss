@@ -2,17 +2,45 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.homeMainContainer {
-  background-image: url("/assets/body-gradient.gif");
-  background-repeat: repeat-x;
-  height: 600px;
-}
-
 .mainH1 {
-  font-size: 60px;
+  font-size: 50px;
+  margin-bottom: 0px;
 }
 
 #homeMainP {
-  font-weight: bold;
-  font-size: 24px;
+  position: relative;
+  font-size: 20px;
+  text-align: center;
+  line-height: 28px;
+}
+
+.logo {
+  position: relative;
+  top: 15px;
+  left: 250px;
+  height: 100px;
+  width: 100px;
+}
+
+#homeH1 {
+  text-align: center;
+}
+
+.signInUp {
+  position: absolute;
+  padding-bottom: 20px;
+  left: 30px;
+  width: 280px;
+  height: 40px;
+}
+
+#btn1 {
+  position: relative;
+  left: 5px;
+}
+
+#btn2 {
+  position: relative;
+  top: -63px;
+  left: 140px;
 }
