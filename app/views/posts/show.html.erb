@@ -19,7 +19,7 @@
       <h3><%= c.content %>&mdash;<%= c.user.fname %> <%= c.user.lname %></h3>
       <!-- delete comments-->
       <%= form_tag("/posts/#{@post.id}/comments/#{c.id}", :method => :delete) do %>
-        <%= submit_tag "delete comment", class: "btn" %>
+        <%= submit_tag "delete", class: "btn" %>
       <% end %>
   <% end %>
 

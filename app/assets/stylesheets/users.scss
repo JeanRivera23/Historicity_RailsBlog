@@ -12,4 +12,35 @@
   width: 350px;
   height: 310px;
   border: 5px solid black;
+  background-color: #f8e1d1;
+}
+
+.uIndexHist {
+  margin-bottom: 40px;
+}
+
+.uHisList {
+  position: relative;
+  left: -40px;
+}
+
+.uIndexHist li {
+  line-height: 35px;
+}
+
+.uIndexHist ul {
+  list-style-type: none;
+}
+
+.userShowBtns {
+  position: relative;
+  top: 0px;
+  left: -10px;
+  height: 80px;
+}
+
+#ubtn2 {
+  position: relative;
+  top: -64px;
+  left: 140px;
 }

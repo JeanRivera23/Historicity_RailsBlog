@@ -1,18 +1,23 @@
 <div class="MainContainer">
-  <h1>Historians</h1>
 
-  <ul>
-    <% @posts.last(10).each do |post| %>
+  <div class="uIndexHist">
+    <h1>Historians</h1>
 
-      <% if @sesh == post.user.id %>
-          <li><a href="/posts/<%=post.id %>"><%= post.title.capitalize %></a> <%= post.user.fname.capitalize %> <%= post.user.lname.capitalize %> <%= post.content %></li>
-      <% else %>
-          <li><a href="/posts/view_user_post/<%=post.id %>"><%= post.title.capitalize %></a> <a href="users/view_user/<%=post.user.id%>"><%= post.user.fname.capitalize %> <%= post.user.lname.capitalize %></a> <%= post.content %></li>
-      <% end %>
+    <div class="uHisList">
+      <ul>
+        <% @posts.last(10).each do |post| %>
 
-    <% end %>
+          <% if @sesh == post.user.id %>
+              <li><a href="/posts/<%=post.id %>"><%= post.title.capitalize %></a> <%= post.user.fname.capitalize %> <%= post.user.lname.capitalize %> <%= post.content %></li>
+          <% else %>
+              <li><a href="/posts/view_user_post/<%=post.id %>"><%= post.title.capitalize %></a> <a href="users/view_user/<%=post.user.id%>"><%= post.user.fname.capitalize %> <%= post.user.lname.capitalize %></a> <%= post.content %></li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
 
-  </ul>
+  </div>
+
 
   <hr>
 

@@ -1,26 +1,29 @@
 <div class="MainContainer">
-  <h1><%= @user.fname.capitalize %> <%= @user.lname.capitalize %></h1>
+  <h1 id="showUserH1"><%= @user.fname.capitalize %> <%= @user.lname.capitalize %></h1>
+
+  <div class="userShowBtns">
+    <%= form_tag('/users/:id/edit', :method => :get) do %>
+      <%= submit_tag "edit account", id: "ubtn1", class: "btn" %>
+    <% end %>
 
 
-  <%= form_tag('/users/:id/edit', :method => :get) do %>
-    <%= submit_tag "edit account", class: "btn" %>
-  <% end %>
+    <%= form_tag('/users/:id', :method => :delete) do %>
+      <%= submit_tag "delete account", id: "ubtn2", class: "btn" %>
+    <% end %>
+  </div>
 
-
-  <%= form_tag('/users/:id', :method => :delete) do %>
-    <%= submit_tag "delete account", class: "btn" %>
-  <% end %>
+  <hr>
 
 
   <div class="postHistory">
 
-    <h1>Published Work</h1>
+    <h2>Published Work</h1>
 
     <% @user.posts.each do |post| %>
 
       <div class="postDisplay">
 
-          <p id="pFeed"> <a href="/posts/<%=post.id %>"><%= post.title.capitalize %></a> : <%= post.content %></p>
+          <p id="pFeed"> <a href="/posts/<%=post.id %>"><%= post.title.capitalize %></a>: <%= post.content %></p>
 
       </div>
 
@@ -28,9 +31,12 @@
     </div>
 
 
+    <hr>
+
+
     <div class="commentHistory">
 
-      <h1>Comment History</h1>
+      <h2>Comment History</h1>
 
       <% @user.comments.each do |comment| %>
 

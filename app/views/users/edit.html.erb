@@ -1,16 +1,21 @@
-<h1>Edit Profile</h1>
+<div class="signUpContainer">
+  <h1 id="sI">Edit Profile</h1>
 
-<%= form_for(@user) do |f| %>
+  <div class="form">
 
-  <%= f.label "First Name" %>
-  <%= f.text_field :fname %>
+      <%= form_for(@user) do |f| %>
 
-  <%= f.label "Last Name" %>
-  <%= f.text_field :lname %>
+        <%= f.label "First Name", class: "formLabel" %>
+        <%= f.text_field :fname %><br> <br>
 
-  <%= f.label :password %>
-  <%= f.text_field :password %>
+        <%= f.label "Last Name", class: "formLabel" %>
+        <%= f.text_field :lname %><br> <br>
 
-  <%= f.submit class: "btn" %>
+        <%= f.label :password, class: "formLabel" %>
+        <%= f.text_field :password %>
 
-<% end %>
+        <%= f.submit class: "btn", id: "signUpBtn" %><br> <br>
+
+      <% end %>
+  </div>
+</div>
