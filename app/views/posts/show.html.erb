@@ -1,5 +1,5 @@
 <div class="MainContainer">
-  <h1><%= @post.title.capitalize %></h1>
+  <h1>Post Title: <%= @post.title.capitalize %></h1>
 
   <p><span><%= @post.user.fname.capitalize %> <%= @post.user.lname.capitalize%></span> &mdash; <%= @post.content%></p>
 
@@ -12,6 +12,8 @@
     <%= submit_tag "delete post", class: "btn" %>
   <% end %>
 
+  <hr>
+  
 
   <h2>Comments</h2>
   <!-- show comments -->

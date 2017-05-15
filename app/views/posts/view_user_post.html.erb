@@ -1,7 +1,9 @@
 <div class="MainContainer">
-  <h1><%= @post.title.capitalize %></h1>
+  <h1>Post Title: <%= @post.title.capitalize %></h1>
 
   <p><span><%= @post.user.fname.capitalize %> <%= @post.user.lname.capitalize%></span> &mdash; <%= @post.content%></p>
+
+  <hr>
 
 
   <h2>Comments</h2>
@@ -18,7 +20,7 @@
   <!-- add comment form -->
   <%= form_for(@comment, url: "/posts/view_user_post/#{@post.id}", :method => :post) do |f| %>
 
-    <%= f.label "Comment" %>
+    <%= f.label "Comment", class: "formLabel" %>
     <%= f.text_field :content %>
 
     <%= f.submit "add", class: "btn" %>

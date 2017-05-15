@@ -1,7 +1,7 @@
 <div class="MainContainer">
 
   <div class="uIndexHist">
-    <h1>Historians</h1>
+    <h1>Posts</h1>
 
     <div class="uHisList">
       <ul>
@@ -10,7 +10,7 @@
           <% if @sesh == post.user.id %>
               <li><a href="/posts/<%=post.id %>"><%= post.title.capitalize %></a> <%= post.user.fname.capitalize %> <%= post.user.lname.capitalize %> <br> <%= post.content %></li> <br>
           <% else %>
-              <li><a href="/posts/view_user_post/<%=post.id %>"><%= post.title.capitalize %></a> <a href="users/view_user/<%=post.user.id%>"><span id="uInSpan"><%= post.user.fname.capitalize %> <%= post.user.lname.capitalize %></span></a> <br><%= post.content %></li><br>
+              <li><a href="/posts/view_user_post/<%=post.id %>"><%= post.title.capitalize %></a> <a href="users/view_user/<%=post.user.id%>"><span id="uInSpan"><%= post.user.fname.capitalize %> <%= post.user.lname.capitalize %></span></a> <br> <%= post.content %></li><br>
           <% end %>
         <% end %>
       </ul>
@@ -26,7 +26,7 @@
 
   <% @comments.last(20).each do |comment| %>
 
-      <p id="pFeed"> <a href="/posts/view_user_post/<%= comment.post_id %>">&#64;<%= comment.post.title %></a> <%= comment.content %> </p>
+      <p id="pFeed"> <a href="/posts/view_user_post/<%= comment.post_id %>">&#64;<%= comment.post.title %></a> <%= comment.content %> <br> <span id="uInSpan"><%= comment.post.user.fname.capitalize %> <%= comment.post.user.lname.capitalize %></span> </p>
   <% end %>
 
 </div>

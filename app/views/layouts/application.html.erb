@@ -23,7 +23,7 @@
               <li id="mLi"><a id="mA" href="/">home</a></li>
               <li id="mLi"><a id="mA" href="/users">feed</a></li>
               <li id="mLi"><a id="mA" href="/users/:id">profile</a></li>
-              <li id="mLi"><a id="mA" href="/posts/new">publish</a></li>
+              <li id="mLi"><a id="mA" href="/posts/new">new post</a></li>
 
               <!-- sign out button -->
               <%= form_tag("/session/#{:user_id}", :method => :delete) do %>
@@ -33,7 +33,7 @@
             </ul>
           </nav>
       <% end %>
-      
+
     <%= yield %>
   </body>
 </html>
